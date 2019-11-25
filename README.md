@@ -46,12 +46,12 @@ When the Makefile is fixed, type `make` to compile the program.
 ## Usage
 
 If the compilation finished successfully, there will be a file named
-`point_cloud_to_raster.bin` in the directoty. To get help on the usage, type
+`point_cloud_to_raster.bin` in the directory. To get help on the usage, type
 ```
 ./point_cloud_to_raster.bin -h
 ```
 
-Let's assume that you have .laz files in directory ${HOME}/lazdata. To generate
+Let's assume that you have .laz files in directory `${HOME}/lazdata`. To generate
 a DEM for a given area from the files, give the command
 ```
 ./point_cloud_to_raster.bin \
