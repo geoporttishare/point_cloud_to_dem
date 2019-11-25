@@ -19,7 +19,7 @@ compiling this program. The main dependencies are
 Most libraries are available on many platforms from their package management
 system. However, you may as well install all the libraries manually locally. For
 example, the LASlib can be compiled locally in the following manner. Here we assume
-that the installation location is '${HOME}/codes':
+that the installation location is `${HOME}/codes`:
 ```
 cd ${HOME}
 mkdir codes
@@ -34,8 +34,8 @@ make
 Let's first fetch the code:
 ```
 cd ${HOME}/codes
-git clone https::github.com/geoportti/XXX
-cd XXX
+git clone https://github.com/geoporttishare/point_cloud_to_dem.git
+cd point_cloud_to_dem
 ```
 In the Makefile it is assumed that the LASlib was cloned and compiled at
 `${HOME}/codes/LAStools.git`. Depending on your system, other paths may need to
@@ -48,7 +48,14 @@ When the Makefile is fixed, type `make` to compile the program.
 Let's assume that you have .laz files in directory ${HOME}/lazdata. To generate
 a DEM for a given area from the files, give the command
 ```
-./point_cloud_to_raster.bin -o dem.gtiff --resolution 1 --refsys epsg:3067 --pointcloud ${HOME}/lazdata --calc-win 215300,6983800,300,300 --include_points_buffer 10 --classes 2,9,14
+./point_cloud_to_raster.bin \
+    -o dem.gtiff \
+    --resolution 1 \
+    --refsys epsg:3067 \
+    --pointcloud ${HOME}/lazdata \
+    --calc-win 215300,6983800,300,300 \
+    --include_points_buffer 10 \
+    --classes 2,9,14
 ```
 This will check each file in the lazdata directory and fetch the points that are
 inside the calculation window with the added buffer. The buffer is required so
